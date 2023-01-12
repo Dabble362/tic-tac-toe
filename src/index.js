@@ -10,6 +10,14 @@ function Square(props) {
   );
 }
 
+function SortButton(props) {
+  return (
+    <button className="sort" onClick={props.onClick}>
+      {`foo`}
+    </button>
+  );
+}
+
 class Board extends React.Component {
   renderSquare(i) {
     return (
@@ -125,7 +133,7 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <button>{"foo"}</button>
+          <SortButton />
           <ol>{moves}</ol>
         </div>
       </div>
