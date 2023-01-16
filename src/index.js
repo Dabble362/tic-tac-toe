@@ -14,6 +14,7 @@ class Board extends React.Component {
   renderSquare(i) {
     return (
       <Square
+        isWinning={this.props.winCondition.includes(i)}
         key={i}
         value={this.props.squares[i]}
         onClick={() => this.props.onClick(i)}
@@ -119,6 +120,7 @@ class Game extends React.Component {
       <div className="game">
         <div className="game-board">
           <Board
+            winCondition={winner ? winner.line : []}
             squares={current.squares}
             onClick={(i) => this.handleClick(i)}
           />
