@@ -63,6 +63,7 @@ class Game extends React.Component {
       ],
       stepNumber: 0,
       xIsNext: true,
+      isAscending: false,
     };
   }
 
@@ -95,7 +96,7 @@ class Game extends React.Component {
 
   sortHistory() {
     this.setState({
-      isDescending: !this.state.isDescending,
+      isAscending: !this.state.isAscending,
     });
   }
 
@@ -140,7 +141,7 @@ class Game extends React.Component {
         <div className="game-info">
           <div>{status}</div>
           <SortButton onClick={() => this.sortHistory()} />
-          <ol>{this.state.isDescending ? moves : moves.reverse()}</ol>
+          <ol>{this.state.isAscending ? moves : moves.reverse()}</ol>
         </div>
       </div>
     );
