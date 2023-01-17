@@ -10,6 +10,14 @@ function Square(props) {
   );
 }
 
+function SortButton(props) {
+  return (
+    <button className="sort" onClick={props.onClick}>
+      {"Sort"}
+    </button>
+  );
+}
+
 class Board extends React.Component {
   renderSquare(i) {
     return (
@@ -85,6 +93,12 @@ class Game extends React.Component {
     });
   }
 
+  toggleSort() {
+    this.setState((prevState) => ({
+      isDescending: !prevState.isDescending,
+    }));
+  }
+
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
@@ -125,7 +139,8 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <ol>{moves}</ol>
+          <SortButton onClick={() => this.toggleSort()} />
+          <ol>{this.state.isDescending ? moves.reverse() : moves}</ol>
         </div>
       </div>
     );
