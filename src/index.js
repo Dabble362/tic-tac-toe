@@ -95,7 +95,7 @@ class Game extends React.Component {
 
   toggleSort() {
     this.setState((prevState) => ({
-      isAscending: !prevState.isAscending,
+      isDescending: !prevState.isDescending,
     }));
   }
 
@@ -140,7 +140,7 @@ class Game extends React.Component {
         <div className="game-info">
           <div>{status}</div>
           <SortButton onClick={() => this.toggleSort()} />
-          <ol>{this.state.isAscending ? moves.reverse() : moves}</ol>
+          <ol>{this.state.isDescending ? moves.reverse() : moves}</ol>
         </div>
       </div>
     );
