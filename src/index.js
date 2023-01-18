@@ -2,15 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
+import { SortButton } from "./components/SortButton";
 import { Square } from "./components/Square";
-
-function SortButton(props) {
-  return (
-    <button className="sort" onClick={props.onClick}>
-      {"Sort"}
-    </button>
-  );
-}
 
 class Board extends React.Component {
   renderSquare(i) {
