@@ -2,16 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-function Square(props) {
-  return (
-    <button
-      className={"square " + (props.isWinning ? "winning-square" : null)}
-      onClick={props.onClick}
-    >
-      {props.value}
-    </button>
-  );
-}
+import { Square } from "./components/Square";
 
 function SortButton(props) {
   return (
