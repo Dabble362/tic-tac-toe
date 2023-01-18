@@ -3,42 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 
 import { SortButton } from "./components/SortButton";
-import { Square } from "./components/Square";
-
-class Board extends React.Component {
-  renderSquare(i) {
-    return (
-      <Square
-        isWinning={this.props.winCondition.includes(i)}
-        key={i}
-        value={this.props.squares[i]}
-        onClick={() => this.props.onClick(i)}
-      />
-    );
-  }
-
-  renderRowSquares(rowNumber) {
-    return [...Array(3).keys()].map((i) =>
-      this.renderSquare(i + rowNumber * 3)
-    );
-  }
-
-  renderRows() {
-    let rows = [];
-    for (let i = 0; i < 3; i++) {
-      rows.push(
-        <div key={i} className="board-row">
-          {this.renderRowSquares(i)}
-        </div>
-      );
-    }
-    return rows;
-  }
-
-  render() {
-    return <div>{this.renderRows()}</div>;
-  }
-}
+import { Board } from "./components/Board";
 
 class Game extends React.Component {
   constructor(props) {
