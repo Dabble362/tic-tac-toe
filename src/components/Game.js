@@ -77,7 +77,7 @@ export class Game extends React.Component {
     if (winner) {
       status = "Winner: " + winner.player;
     } else if (!current.squares.includes(null)) {
-      status = "The game is a draw!"
+      status = "The game is a draw!";
     } else {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
